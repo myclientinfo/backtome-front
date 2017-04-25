@@ -7,6 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('milestone', {
+    path: 'triggers/:id'
+  }, function() {
+    this.route('details');
+    this.route('embed');
+    this.route('message');
+  });
+  this.route('account');
 });
 
 export default Router;

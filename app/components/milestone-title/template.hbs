@@ -1,0 +1,7 @@
+
+{{#if isEditing}}
+  {{input value=name}}
+  <button class="button">Save</button>
+{{else}}
+<h1 class="title milestone-title">{{name}}{{fa-icon 'pencil' class="edit-link"}}</h1>
+{{/if}}

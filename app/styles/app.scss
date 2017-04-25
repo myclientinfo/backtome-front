@@ -1,0 +1,155 @@
+
+$nav-background: #CCC;
+$icon-background: #E9ECFE;
+
+nav.main-nav {
+  background-color: $nav-background;
+}
+
+.bottom-icon {
+  color: $icon-background;
+}
+
+.top-icon {
+  color: $nav-background;
+  
+}
+
+nav.subnav {
+  margin-top: 3px;
+}
+
+h1.milestone-title {
+  
+  &:hover .edit-link {
+    display: inline;
+  }
+  
+  .edit-link {
+    display: none;
+    margin-left: 30px;
+    color: #999;
+    cursor: pointer;
+  }
+}
+
+.panel-block .icon-box {
+  color: $nav-background;
+  margin: 20px 20px 20px 10px;
+}
+
+.nav-item i, .button i {
+  margin-right: 8px;
+}
+
+textarea.messageEditor {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #ebebeb;
+  font-family: sans-serif;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+p.subject-display {
+  font-family: 'Courier';
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+div.card.formattedEmail {
+
+  padding: 20px;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
+  h4 {
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .unsubscribe {
+    color: #666;
+    font-size: 14px;
+
+    .link {
+      color: #357EC7;
+      text-decoration: underline;
+    }
+  }
+}
+
+section.main {
+  padding: 30px 0;
+}
+
+pre.embed {
+  padding: 30px;
+}
+
+#widget {
+position: relative;
+
+}
+#widget p {
+  padding-bottom: 10px;
+  
+}
+
+#widget .hidden {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#widget:hover .hidden {
+  display: block;
+}
+
+.widget-form.disabled{
+  opacity: .4;
+} 
+
+h1.branding{
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.level-item i {
+  position: relative;
+  top: 4px;
+}
+
+.level-item .success i {
+  color: #90EE90;
+}
+
+.level-item .fail i {
+  color: red;
+}
+
+
+@import "ember-power-select";

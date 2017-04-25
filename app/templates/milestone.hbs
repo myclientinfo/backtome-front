@@ -1,0 +1,24 @@
+<nav class="nav subnav">
+  <div class="nav-left">
+    {{#link-to "index" class="nav-item is-tab" activeClass="is-active"}}
+      {{fa-icon 'chevron-left'}}
+    {{/link-to}}
+    {{#link-to "milestone.index" model class="nav-item is-tab" activeClass="is-active"}}
+      {{fa-icon 'tachometer'}} Details
+    {{/link-to}}
+    {{#link-to "milestone.embed" model class="nav-item is-tab" activeClass="is-active"}}
+      {{fa-icon 'code'}} Embed Codes
+    {{/link-to}}
+    {{#link-to "milestone.message" model class="nav-item is-tab" activeClass="is-active"}}
+      {{fa-icon 'image'}} Edit Message
+    {{/link-to}}
+  </div>
+</nav>
+
+<section class="main">
+  
+  {{milestone-title name=model.name}}
+
+  {{outlet}}
+
+</section>

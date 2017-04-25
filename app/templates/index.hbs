@@ -1,0 +1,36 @@
+<section class="main">
+
+<div class="columns">
+  <div class="column is-one-third">
+    <nav class="panel">
+      <p class="panel-heading">
+        Your current mail triggers
+      </p>
+      {{#each model as |item|}}
+        {{#link-to 'milestone' item class="panel-block" activeClass="is-active"}}{{item.name}}{{/link-to}}
+      {{else}}
+        <div class="panel-block">
+          {{fa-icon "fa-hand-paper-o" size=3 class="icon-box"}}
+          <p>You have no message triggers. Please create one with the button below.</p>
+        </div>
+      {{/each}}
+      <div class="panel-block">
+        <button class="button is-primary is-outlined is-fullwidth"{{action (mut isEditing) true}}>
+          {{fa-icon 'plus-square-o'}} Create new trigger
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="column is-one-third">
+    {{#if isEditing}}
+      <h2 class="title">Add new trigger</h2>
+      
+      {{milestone-form isEditing=true cancelAction=(action 'cancelMilestone') saveAction=(action 'createMilestone')}}
+    {{else}}
+      <h2 class="title">Manage your triggers</h2>
+
+      <p>Select one of your triggers on the left to modify the details.</p>
+    {{/if}}
+  </div>
+</div>
+</section>

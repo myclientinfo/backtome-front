@@ -1,0 +1,54 @@
+<div class="columns">
+  <div class="column">
+    
+    <div class="field">
+      <label class="label">Email Subject</label>
+      <p class="control">
+        {{input value=model.messageSubject class="input"}}
+      </p>
+    </div>
+
+    <div class="field">
+      <label class="label">Message</label>
+      <p class="control">
+        {{textarea value=model.messageContent class="messageEditor"}}
+      </p>
+    </div>
+    
+
+    {{markdown-panel}}
+
+<div class="field">
+  <p class="control">
+    <label class="checkbox">
+      {{fa-icon (if model.messageConfirmed 'check-square-o' 'square-o') fixedWidth=true}}
+       Confirm message as complete
+    </label>
+    <button class="button is-pulled-right is-primary">{{fa-icon 'cloud-upload'}} Save</button>
+  </p>
+</div>
+
+    
+
+  </div>
+  <div class="column">
+    <p class="subject-display">To: [Name] &lt;email&gt;</p>
+    <p class="subject-display">Subject: {{model.messageSubject}}</p>
+    <div class="card formattedEmail">
+      
+      <h2>To [first name],</h2>
+
+      {{markdown-to-html markdown=model.messageContent}}
+
+      <div class="columns">
+        <div class="column is-1">
+          {{#fa-stack as |s|}}
+            {{s.stack-2x "circle" class="bottom-icon"}}
+            {{s.stack-1x "fa-paper-plane-o" class="top-icon"}}
+          {{/fa-stack}}
+        </div>
+        <div class="column is-11 unsubscribe">If you no longer wish to receive emails from us please <span class="link">click here to unsubscribe</span>.</div>
+      </div>
+    </div>
+  </div>
+</div>

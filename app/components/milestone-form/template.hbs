@@ -1,0 +1,26 @@
+{{#if isEditing}}
+
+<div class="field">
+  <label class="label">Name</label>
+  <p class="control">
+    {{input value=milestone.name class="input"}}
+  </p>
+</div>
+
+<div class="field is-grouped">
+  <p class="control">
+    <button class="button is-primary"{{action 'save' milestone}}>Submit</button>
+  </p>
+  <p class="control">
+    <button class="button is-link"{{action 'cancel'}}>Cancel</button>
+  </p>
+</div>
+
+{{else}}
+<div class="field">
+  <p class="control">
+    <a  class="button is-primary" {{action (mut isEditing) true}}>Edit this trigger</a>
+  </p>
+</div>
+
+{{/if}}

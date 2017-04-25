@@ -1,0 +1,41 @@
+
+<div class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Subscribers</p>
+      <p class="title {{if (eq model.subscribers 0) 'fail' 'success'}}">{{model.subscribers}} 
+          {{fa-icon (if (eq model.subscribers 0) 'square-o' 'check-square-o')}}
+      </p>
+    </div>
+  </div>
+
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Embed Code</p>
+      <p class="title {{if model.embedConfirmed 'success' 'fail'}}">
+        {{if model.embedConfirmed 'Confirmed' 'Draft'}}
+        {{fa-icon (if model.embedConfirmed 'check-square-o' 'square-o')}}
+      </p>
+    </div>
+  </div>
+
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Message Details</p>
+      <p class="title {{if model.messageConfirmed 'success' 'fail'}}">
+        {{if model.messageConfirmed 'Confirmed' 'Draft'}}
+        {{fa-icon (if model.messageConfirmed 'check-square-o' 'square-o')}}
+      </p>
+    </div>
+  </div>
+
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Send Emails</p>
+      <p class="button disabled is-primary">Send Messages</p>
+    </div>
+  </div>
+
+</div>
+
+{{!milestone-form milestone=model saveAction=(action 'saveMilestone') cancelAction=(action 'cancelMilestone')!}}

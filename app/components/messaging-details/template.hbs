@@ -1,0 +1,80 @@
+
+
+<div class="columns">
+
+  <div class="column is-half is-offset-one-quarter">
+
+    <div class="columns">
+      <div class="column is-half">
+        {{#power-select searchEnabled=false selected=type options=types onchange=(action "changeType") as |type|}}{{type}}{{/power-select}}
+      </div>
+    </div>
+
+    <div class="box type-{{type}}">
+
+      {{#liquid-if (eq type 'mailgun') use="crossFade"}}
+      <h3 class="title">Mailgun Settings</h3>
+
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="API Key">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="Secret">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <button class="button is-primary">Save</button>
+        </p>
+      </div>
+      {{/liquid-if}}
+      {{#liquid-if (eq type 'mandrill') use="crossFade"}}
+
+      <h3 class="title">Mandrill Settings</h3>
+
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="API Key">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <button class="button is-primary">Save</button>
+        </p>
+      </div>
+    
+      {{/liquid-if}}
+
+      {{#liquid-if (eq type 'campaign monitor') use="crossFade"}}
+
+      <h3 class="title">Campaign Monitor Settings</h3>
+
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="API Key">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="Campaign ID">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <button class="button is-primary">Save</button>
+        </p>
+      </div>
+    
+      {{/liquid-if}}
+
+      
+    </div>
+  </div>
+</div>

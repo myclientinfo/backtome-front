@@ -1,0 +1,50 @@
+<div class="columns">
+  <div class="column is-two-thirds is-offset-2">
+    
+    
+    <div id="widget">
+      <div class="box is-clearfix">
+        {{#if isEditing}}
+        <div class="field">
+          <p class="control">
+            {{input value=message class="input"}}
+          </p>
+        </div>
+        <div class="field is-grouped">
+          <p class="control">
+            <button class="button is-primary"{{action 'updateMessage' message}}>Update</button>
+          </p>
+          <p class="control">
+            <button class="button is-link"{{action (mut isEditing) false}}>Cancel</button>
+          </p>
+        </div>
+        {{else}}
+        <p>{{message}}</p>
+        {{/if}}
+        <div class="widget-form {{if isEditing 'disabled'}}">
+          <div class="field">
+            <p class="control">
+              <input class="input" type="name" placeholder="Your name - optional">
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icon">
+              <input class="input" type="email" placeholder="Email">
+              <span class="icon is-small">
+                {{fa-icon 'envelope'}}
+              </span>
+            </p>
+          </div>
+
+        <a class="button is-primary is-pulled-right ">{{fa-icon 'pencil-square-o'}} Submit email</a>
+        <div>
+      </div>
+    </div>
+    </div>
+    {{#unless isEditing}}
+    <a class="button hidden" {{action (mut isEditing) true}}>{{fa-icon 'pencil-square-o'}}change</a>
+    {{/unless}}
+    </div>
+  </div>
+</div>
+
