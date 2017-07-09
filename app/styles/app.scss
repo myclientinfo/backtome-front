@@ -1,6 +1,8 @@
 
 $nav-background: #CCC;
 $icon-background: #E9ECFE;
+$break-small: 320px;
+$break-large: 1200px;
 
 nav.main-nav {
   background-color: $nav-background;
@@ -149,6 +151,20 @@ h1.branding{
 
 .level-item .fail i {
   color: red;
+}
+
+.subnav {
+
+  
+  @media screen and (max-width: 500px) {
+      .is-active .link-text {
+        display: inline;
+      } 
+
+      .link-text {
+        display: none;
+      }
+  }
 }
 
 
